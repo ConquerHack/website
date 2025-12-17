@@ -1,0 +1,227 @@
+:root {
+    --bg-color: #121B2B;
+    --text-color: #FDFDFD;
+    --accent-primary: #7EBFF2;
+    --accent-secondary: #A1BDCD;
+    --card-bg: #1a2639;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* Header & Nav */
+header {
+    background-color: rgba(18, 27, 43, 0.95);
+    padding: 1rem 2rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid var(--accent-secondary);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: var(--accent-primary);
+}
+
+.logo {
+    height: 40px;
+    width: auto;
+    border-radius: 50%;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+nav a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: var(--accent-primary);
+}
+
+.lang-switch {
+    margin-left: 1rem;
+    border-left: 1px solid var(--accent-secondary);
+    padding-left: 1rem;
+}
+
+.lang-switch a {
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
+
+.lang-switch a.active, .lang-switch a:hover {
+    opacity: 1;
+    color: var(--accent-primary);
+}
+
+/* Hero Section */
+#hero {
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(rgba(18, 27, 43, 0.8), rgba(18, 27, 43, 0.8)), url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80'); /* Placeholder tech background */
+    background-size: cover;
+    background-position: center;
+    padding-top: 80px;
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    color: var(--accent-primary);
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    color: var(--accent-secondary);
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background-color: var(--accent-primary);
+    color: var(--bg-color);
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    background-color: var(--accent-secondary);
+}
+
+/* General Layout */
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+}
+
+h2 {
+    font-size: 2.5rem;
+    color: var(--accent-primary);
+    margin-bottom: 2rem;
+    border-bottom: 2px solid var(--accent-secondary);
+    padding-bottom: 0.5rem;
+    display: inline-block;
+}
+
+h3 {
+    font-size: 1.8rem;
+    color: var(--accent-secondary);
+    margin-bottom: 1rem;
+    margin-top: 1.5rem;
+}
+
+p {
+    margin-bottom: 1rem;
+    color: #e0e0e0;
+}
+
+/* Grid Layouts */
+.grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.card {
+    background-color: var(--card-bg);
+    padding: 2rem;
+    border-radius: 10px;
+    border: 1px solid var(--accent-secondary);
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.mt-2 {
+    margin-top: 2rem;
+}
+
+/* Logistics */
+.logistics-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.detail-item {
+    background-color: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+    border-top: 3px solid var(--accent-primary);
+}
+
+.detail-item strong {
+    display: block;
+    color: var(--accent-primary);
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Footer */
+footer {
+    background-color: #0a101a;
+    text-align: center;
+    padding: 2rem;
+    margin-top: 4rem;
+    color: var(--accent-secondary);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .grid-2 {
+        grid-template-columns: 1fr;
+    }
+    
+    nav ul {
+        display: none; /* Simple mobile hide for now */
+    }
+    
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+}
